@@ -1,0 +1,64 @@
+/* 
+  Variables, such as spacing, padding, margins, font-size etc can be moved to var list.
+  It might be figma-tokens and css-variables or scss-variables as below.
+*/
+$button-border-radius: 4px;
+$button-inner-gap: 8px;
+
+.intelas-button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
+  outline: 0;
+  background: none;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+
+  font-size: var(--intelas-button-font-size);
+  line-height: var(--intelas-button-line-height);
+  min-height: var(--intelas-button-min-height);
+  padding: var(--intelas-button-v-padding) var(--intelas-button-h-padding);
+
+  /* SIZE */
+  &--size--small {
+    --intelas-button-font-size: 14px;
+    --intelas-button-line-height: 20px;
+    --intelas-button-min-height: 32px;
+    --intelas-button-v-padding: 5px;
+    --intelas-button-h-padding: 15px;
+
+    &.intelas-button--icon-only {
+      --intelas-button-h-padding: 5px;
+    }
+  }
+
+  &--size--large {
+        --intelas-button-font-size: 16px;
+    --intelas-button-line-height: 22px;
+    --intelas-button-min-height: 40px;
+    --intelas-button-v-padding: 7px;
+    --intelas-button-h-padding: 15px;
+
+    &.intelas-button--icon-only {
+      --intelas-button-h-padding: 7px;
+    }
+  }
+
+    /* ICON POSITION */
+  &--icon-position--left,
+  &--icon-position--right {
+    gap: $button-inner-gap;
+  }
+
+  &--icon-position--right {
+    flex-direction: row-reverse;
+  }
+}

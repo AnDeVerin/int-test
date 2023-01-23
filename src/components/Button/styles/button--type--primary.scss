@@ -1,0 +1,34 @@
+.intelas-button--type--primary {
+  background-color: var(--intelas-color-primary-purple);
+  color: var(--intelas-color-secondary-white);
+  
+  &.intelas-button--disabled {
+    opacity: 0.3;
+
+    &:active,
+    &:hover {
+      background-color: var(--intelas-color-primary-purple);
+    }
+  }
+
+  &:hover {
+    background-color: var(--intelas-color-primary-dark-purple);
+  }
+  
+  &:focus {
+    background-color: var(--intelas-color-primary-dark-purple);
+    box-shadow: 0 0 0 2px var(--intelas-color-table-level-2);
+  }
+
+  &:active {
+    background-color: var(--intelas-color-primary-pressed-purple);
+    box-shadow: none;
+  }
+
+  &.intelas-button--loading {
+    background-color: var(--intelas-color-table-level-1);
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

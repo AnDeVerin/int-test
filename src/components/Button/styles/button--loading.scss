@@ -1,0 +1,16 @@
+.intelas-button--loading {
+  cursor: wait;
+
+  &.intelas-button--label-only {
+    .intelas-button__label {
+      visibility: hidden;
+    }
+
+    .intelas-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
