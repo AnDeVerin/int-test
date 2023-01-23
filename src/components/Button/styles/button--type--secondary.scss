@@ -1,0 +1,39 @@
+.intelas-button--type--secondary {
+  background-color: var(--intelas-color-secondary-white);
+  color: var(--intelas-color-primary-purple);
+  border: 1px solid var(--intelas-color-primary-purple);
+
+  &.intelas-button--disabled {
+    opacity: 0.3;
+
+    &:active,
+    &:hover {
+      background-color: var(--intelas-color-secondary-white);
+    }
+  }
+
+  &:hover {
+    background-color: var(--intelas-color-background-purple);
+  }
+
+  &:focus {
+    background-color: var(--intelas-color-secondary-white);
+    box-shadow: 0 0 0 2px var(--intelas-color-primary-light-purple);
+  }
+
+  &:active {
+    background-color: var(--intelas-color-table-level-4);
+    box-shadow: none;
+  }
+
+  &.intelas-button--loading,
+  &.intelas-button--loading:hover {
+    opacity: 1;
+    // color: var(--intelas-color-primary-dark-purple);
+    background-color: var(--intelas-color-secondary-white);
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}

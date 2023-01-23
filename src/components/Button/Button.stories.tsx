@@ -22,12 +22,15 @@ export const Primary = Template.bind({});
 Primary.args = {
   type: ButtonType.Primary,
   label: 'Button',
+  onClick: () => console.log('click'),
 };
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
+export const Secondary = Template.bind({});
+Secondary.args = {
+  type: ButtonType.Secondary,
+  label: 'Button',
+  onClick: () => console.log('click'),
+};
 
 // export const Large = Template.bind({});
 // Large.args = {

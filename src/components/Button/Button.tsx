@@ -24,6 +24,7 @@ export const Button = ({
   iconPosition,
   disabled = false,
   loading = false,
+  onClick,
   ...props
 }: ButtonProps) => {
   const hasLeftIcon = iconName && iconPosition === ButtonIconPosition.Left;
@@ -84,11 +85,20 @@ export const Button = ({
     </>
   );
 
+  const clickHandler = () => {
+    if (disabled || loading) {
+      return;
+    }
+
+    onClick && onClick();
+  };
+
   return (
     <button
       type="button"
       disabled={disabled}
       className={getClassNames()}
+      onClick={clickHandler}
       {...props}
     >
       {getContent()}
