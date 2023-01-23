@@ -25,8 +25,12 @@
     box-shadow: none;
   }
 
-  &.intelas-button--loading {
+  &.intelas-button--loading,
+  &.intelas-button--loading:hover {
+    opacity: 1;
+    color: var(--intelas-color-primary-dark-purple);
     background-color: var(--intelas-color-table-level-1);
+
     &:focus {
       box-shadow: none;
     }
