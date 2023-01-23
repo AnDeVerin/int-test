@@ -4,6 +4,7 @@
 */
 $button-border-radius: 4px;
 $button-inner-gap: 8px;
+$button-inner-gap-flat: 4px;
 
 .intelas-button {
   font-family: 'Inter', sans-serif;
@@ -41,7 +42,7 @@ $button-inner-gap: 8px;
   }
 
   &--size--large {
-        --intelas-button-font-size: 16px;
+    --intelas-button-font-size: 16px;
     --intelas-button-line-height: 22px;
     --intelas-button-min-height: 40px;
     --intelas-button-v-padding: 7px;

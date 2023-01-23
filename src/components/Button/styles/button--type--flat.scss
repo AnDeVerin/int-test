@@ -1,0 +1,51 @@
+@mixin label-underline($size: small) {
+  $line-height: 1px;
+
+  @if $size == large {
+    $line-height: 2px;
+  }
+
+  .intelas-button__label {
+    position: relative;
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      width: 100%;
+      height: $line-height;
+      background-color: currentColor;
+    }
+  }
+}
+
+.intelas-button--type--flat {
+  min-height: 20px;
+  padding: 0;
+  gap: $button-inner-gap-flat;
+  color: var(--intelas-color-primary-purple);
+  background-color: transparent;
+
+  &:hover:not(.intelas-button--disabled),  
+  &:focus:not(.intelas-button--disabled),
+  &:active:not(.intelas-button--disabled) {
+    &.intelas-button--size--small {
+      @include label-underline(small);
+    }
+  }
+
+  &.intelas-button--size--large:hover:not(:active):not(.intelas-button--disabled) {
+    @include label-underline(large);
+  }
+
+  &:hover:not(.intelas-button--disabled),  
+  &:focus:not(.intelas-button--disabled) {
+    color: var(--intelas-color-primary-dark-purple);
+  }
+  
+  &:active:not(.intelas-button--disabled) {
+    color: var(--intelas-color-primary-pressed-purple);
+  }
+}

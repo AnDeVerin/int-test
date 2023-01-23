@@ -20,26 +20,38 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  type: ButtonType.Primary,
   label: 'Button',
-  onClick: () => console.log('click'),
+  type: ButtonType.Primary,
+  size: ButtonSize.Small,
+  disabled: false,
+  loading: false,
+  onClick: () => console.log('click Primary'),
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  type: ButtonType.Secondary,
   label: 'Button',
-  onClick: () => console.log('click'),
+  type: ButtonType.Secondary,
+  size: ButtonSize.Small,
+  disabled: false,
+  loading: false,
+  onClick: () => console.log('click Secondary'),
 };
 
-// export const Large = Template.bind({});
-// Large.args = {
-//   size: 'large',
-//   label: 'Button',
-// };
+export const Flat = Template.bind({});
+Flat.args = {
+  label: 'Button',
+  type: ButtonType.Flat,
+  size: ButtonSize.Small,
+  disabled: false,
+  onClick: () => console.log('click Flat'),
+};
 
-// export const Small = Template.bind({});
-// Small.args = {
-//   size: 'small',
-//   label: 'Button',
-// };
+export const Destructive = Template.bind({});
+Destructive.args = {
+  label: 'Button',
+  type: ButtonType.Destructive,
+  size: ButtonSize.Small,
+  disabled: false,
+  onClick: () => console.log('click Destructive'),
+};

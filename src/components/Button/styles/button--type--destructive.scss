@@ -1,0 +1,8 @@
+.intelas-button--type--destructive {
+  color: var(--intelas-color-secondary-white);
+  background-color: var(--intelas-color-stroke-red);
+
+  &:hover:not(.intelas-button--disabled) {
+    background-color: var(--intelas-color-status-red);
+  }
+}

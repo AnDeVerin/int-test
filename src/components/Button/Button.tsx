@@ -33,6 +33,11 @@ export const Button = ({
   const hasIcon = hasLeftIcon || hasRightIcon || hasOnlyIcon;
   const hasOnlyLabel = !hasIcon;
 
+  const hasLoadingState =
+    type === ButtonType.Primary || type === ButtonType.Secondary;
+
+  const isLoading = loading && hasLoadingState;
+
   const getTypeClass = () => {
     switch (type) {
       case ButtonType.Secondary:
@@ -61,7 +66,7 @@ export const Button = ({
     classNames({
       'intelas-button': true,
       'intelas-button--disabled': disabled,
-      'intelas-button--loading': loading,
+      'intelas-button--loading': isLoading,
       'intelas-button--icon-position--left': hasLeftIcon,
       'intelas-button--icon-position--right': hasRightIcon,
       'intelas-button--icon-only': hasOnlyIcon,
@@ -74,11 +79,11 @@ export const Button = ({
     size === ButtonSize.Large ? IconSize.Large : IconSize.Small;
 
   const getIconName = () =>
-    loading ? IconName.Loader : iconName || IconName.Loader;
+    isLoading ? IconName.Loader : iconName || IconName.Loader;
 
   const getContent = () => (
     <>
-      {(hasIcon || loading) && (
+      {(hasIcon || isLoading) && (
         <Icon size={getIconSize()} name={getIconName()} />
       )}
       {!hasOnlyIcon && <span className="intelas-button__label">{label}</span>}
@@ -86,7 +91,7 @@ export const Button = ({
   );
 
   const clickHandler = () => {
-    if (disabled || loading) {
+    if (disabled || isLoading) {
       return;
     }
 

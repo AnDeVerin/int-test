@@ -3,37 +3,17 @@
   color: var(--intelas-color-primary-purple);
   border: 1px solid var(--intelas-color-primary-purple);
 
-  &.intelas-button--disabled {
-    opacity: 0.3;
-
-    &:active,
-    &:hover {
-      background-color: var(--intelas-color-secondary-white);
-    }
-  }
-
-  &:hover {
-    background-color: var(--intelas-color-background-purple);
-  }
-
-  &:focus {
+  &:focus:not(.intelas-button--disabled):not(.intelas-button--loading) {
     background-color: var(--intelas-color-secondary-white);
     box-shadow: 0 0 0 2px var(--intelas-color-primary-light-purple);
   }
 
-  &:active {
-    background-color: var(--intelas-color-table-level-4);
-    box-shadow: none;
+  &:hover:not(.intelas-button--disabled):not(.intelas-button--loading) {
+    background-color: var(--intelas-color-background-purple);
   }
 
-  &.intelas-button--loading,
-  &.intelas-button--loading:hover {
-    opacity: 1;
-    // color: var(--intelas-color-primary-dark-purple);
-    background-color: var(--intelas-color-secondary-white);
-
-    &:focus {
-      box-shadow: none;
-    }
+  &:active:not(.intelas-button--disabled):not(.intelas-button--loading) {
+    background-color: var(--intelas-color-table-level-4);
+    box-shadow: none;
   }
 }
