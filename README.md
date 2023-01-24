@@ -26,6 +26,10 @@ For the technology stack we recommend you to follow this group:
 
 - SASS
 
+## Demo
+
+👉 Check out storybook app at [andeverin.github.io/int-test](https://andeverin.github.io/int-test/?path=/docs/docs-button--primary)
+
 ## Implementation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and [Storybook](https://storybook.js.org/).
@@ -41,6 +45,8 @@ npm run storybook
 SVG-sprite with icons and some common styles are injected into the document body `./storybook/preview-body.html` for simplicity. Source files can be found in `src/icons` and `src/styles` folders.
 
 ## Icon component
+
+👉 Find more information at [Icon page](https://andeverin.github.io/int-test/?path=/docs/docs-icon--info)
 
 > Dependency for Button component.
 
@@ -58,6 +64,8 @@ SVG-sprite with icons and some common styles are injected into the document body
 ```
 
 ## Button component
+
+👉 Find more information at [Button page](https://andeverin.github.io/int-test/?path=/docs/docs-button--primary)
 
 | Property       | Description                                                                                   | Type                                                                                      | Default              |
 | -------------- | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | -------------------- |
