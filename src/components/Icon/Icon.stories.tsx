@@ -8,8 +8,19 @@ export default {
   title: 'Components/Icon',
   component: Icon,
   argTypes: {
-    size: IconSize,
-    name: IconName,
+    size: {
+      description: 'Defines the size of the element (s: 20x20, l: 24x24)',
+      options: ['s', 'l'],
+      table: {
+        defaultValue: {
+          summary: 's',
+        },
+      },
+    },
+    name: {
+      description: 'Indicates which icon to use',
+      options: IconName,
+    },
   },
 } as ComponentMeta<typeof Icon>;
 

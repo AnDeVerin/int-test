@@ -1,0 +1,121 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Button } from './Button';
+import { ButtonIconPosition, ButtonSize, ButtonType } from './types';
+import { IconName } from '../Icon/types';
+
+export const Template = (args) => <Button {...args} />;
+
+<Meta title="Docs/Button" component={Button} />
+
+### Button
+
+The component renders a `button` element with icon and label inside.
+
+#### Arguments
+
+- `type`, defines the button theme `primary`, `secondary`, `flat` and `destructive`
+
+<Canvas>
+  <Story name="primary" args={{ type: 'primary', label: 'Primary' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="secondary" args={{ type: 'secondary', label: 'Secondary' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="flat" args={{ type: 'flat', label: 'Flat' }}>
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="destructive"
+    args={{ type: 'destructive', label: 'Destructive' }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `size`, defines the size of the button `s` (default), `l`
+
+<Canvas>
+  <Story name="small" args={{ type: 'secondary', label: 'Small', size: 's' }}>
+    {Template.bind({})}
+  </Story>
+  <Story name="large" args={{ type: 'secondary', label: 'Large', size: 'l' }}>
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `label`, defines the label on the button
+
+- `iconName`, icon to use inside the button (see [Icon component](?path=/docs/docs-icon--info)).
+  Does not render icon if `undefined`
+
+- `iconPosition`, icon position `left`, `right` and `only`. Does not render icon if `undefined`
+
+<Canvas>
+  <Story
+    name="only"
+    args={{
+      type: 'secondary',
+      label: 'only',
+      iconName: 'info',
+      iconPosition: 'only',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="left"
+    args={{
+      type: 'secondary',
+      label: 'Left',
+      iconName: 'info',
+      iconPosition: 'left',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="right"
+    args={{
+      type: 'secondary',
+      label: 'Right',
+      iconName: 'info',
+      iconPosition: 'right',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `disabled`, disable the button
+
+<Canvas>
+  <Story
+    name="disabled"
+    args={{ type: 'secondary', label: 'Disabled', disabled: true }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `loading`, indicates loading state. Works for `primary` and `secondary` buttons only, otherwise ignored
+
+<Canvas>
+  <Story
+    name="primary-loading"
+    args={{ type: 'primary', label: 'Button', loading: true }}
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="secondary-loading"
+    args={{ type: 'secondary', label: 'Button', loading: true }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+- `onClick` callback, ignored if `undefined`
+
+<ArgsTable of={Button} />

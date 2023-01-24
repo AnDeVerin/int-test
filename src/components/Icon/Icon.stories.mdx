@@ -1,0 +1,68 @@
+import {
+  ArgsTable,
+  Canvas,
+  Meta,
+  Story,
+  IconGallery,
+  IconItem,
+} from '@storybook/addon-docs';
+
+import { Icon } from './Icon';
+import { IconSize, IconName } from './types';
+
+<Meta title="Docs/Icon" component={Icon} />
+
+### Icon
+
+The component renders an `svg` element with the link to the corresponding symbol
+inside the svg-sprite.
+
+```js
+<svg>
+  <use href="#icon-name" />
+</svg>
+```
+
+SVG-sprite with icons is injected into the document body in
+`./storybook/preview-body.html` for simplicity.
+
+Icon source files can be found in `src/icons`.
+
+In this demo there are three icons
+
+<IconGallery>
+  <IconItem name="info">
+    <Icon name="info" />
+  </IconItem>
+  <IconItem name="chevron-right">
+    <Icon name="chevron-right" />
+  </IconItem>
+  <IconItem name="loader">
+    <Icon name="loader" />
+  </IconItem>
+</IconGallery>
+
+#### Arguments
+
+The component is passed two arguments:
+
+- `size`, defines the size of an icon, 20x20 px for `s` (default) and 24x24 px for `l`
+- `name` (required), corresponds to a symbol in the svg-sprite
+
+<ArgsTable of={Icon} />
+
+#### Code snippet
+
+export const Template = (args) => <Icon {...args} />;
+
+<Canvas withSource="open">
+  <Story
+    name="info"
+    args={{
+      size: 's',
+      name: 'info',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
